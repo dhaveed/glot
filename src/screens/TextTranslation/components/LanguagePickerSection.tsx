@@ -4,6 +4,8 @@ import LanguageWidget from '../../../components/LanguageWidget';
 import {LanguagePair} from '../../../@types/language.types';
 import {SwapIcon} from '../../../assets/icons';
 import {Colors} from '../../../styles/themes/tokens';
+import {useNavigation} from '@react-navigation/native';
+import {HomeStackParamList} from '../../../navigation/@types';
 
 type LanguagePickerProps = LanguagePair;
 
@@ -11,11 +13,19 @@ function LanguagePickerSection({
   sourceLanguage,
   targetLanguage,
 }: LanguagePickerProps) {
+  const {navigate} = useNavigation();
+
+  const handleLanguagePress = (languageCode: string) =>
+    navigate('LanguagePicker', {
+      code: languageCode,
+    });
+
   return (
     <View style={styles.pickerContainer}>
       <LanguageWidget
         language={sourceLanguage.name}
         code={sourceLanguage.code}
+        onPress={() => handleLanguagePress(sourceLanguage.code)}
       />
       <View style={styles.swapIconWrapper}>
         <SwapIcon color={Colors.textPrimary} width={20} />
@@ -23,6 +33,7 @@ function LanguagePickerSection({
       <LanguageWidget
         language={targetLanguage.name}
         code={targetLanguage.code}
+        onPress={() => handleLanguagePress(targetLanguage.code)}
       />
     </View>
   );

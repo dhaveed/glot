@@ -1,7 +1,8 @@
 /* eslint-disable quotes */
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {TranslationTextInput} from '.';
+
+import TranslationTextInput from './TranslationTextInput';
 import {LanguagePair} from '../../../@types/language.types';
 
 interface Props {

@@ -1,4 +1,4 @@
 import LanguagePickerSection from './LanguagePickerSection';
-import TranslationTextInput from './TranslationTextInput';
+import TranslationTextInputSection from './TranslationTextInputSection';
 
-export {LanguagePickerSection, TranslationTextInput};
+export {LanguagePickerSection, TranslationTextInputSection};

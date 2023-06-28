@@ -11,6 +11,7 @@ interface Props {
   language: Language;
   textInputProps?: TextInputProps;
   isSource: boolean;
+  // isReadOnly: boolean;
 }
 
 export default function TranslationTextInput({
@@ -74,4 +75,7 @@ const styles = StyleSheet.create({
 /**
  * Sample text
  * Hello there, this is some sample text I’m writing to check out what the lines would be like and now I realize that I will need to add some line height to improve the legibility of the text area so let’s do that then and see what it’s like and at this point, we have about 6 lines of text. And now I’ll just keep going to see how far it an actually go to be honest because I think it’s actually starting to come together rather nicely.
+ *
+ *
+ * Add a copy icon to the bottom right of the input if it's a readonly input
  */
